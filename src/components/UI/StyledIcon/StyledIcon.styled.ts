@@ -12,5 +12,5 @@ export const IconComponent = styled.svg<Props>`
   height: ${props => (props.$height ? props.$height : 'auto')};
   fill: ${props => (props.$fill ? props.$fill : theme.colors.dark.fontLight)};
   stroke: ${props => (props.$fill ? props.$fill : 'inherit')};
-  transition: ${theme.transition.all150};
+  transition: all 150 linear;
 `;

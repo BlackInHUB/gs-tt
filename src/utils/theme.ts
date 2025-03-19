@@ -31,14 +31,12 @@ const theme = {
     bold: '600',
   },
   radii: {
+    xxs: '12px',
     xs: '16px',
     s: '20px',
     m: '24px',
     l: '32px',
     round: '50%',
-  },
-  transition: {
-    all150: 'all 150ms linear',
   },
 };
 
