@@ -6,12 +6,20 @@ export const DropdownContainer = styled.div`
   background-color: ${({ theme }) => theme.colors.dark.elements};
   border-radius: ${({ theme }) => theme.radii.l};
   cursor: pointer;
+
+  @media (min-width: 1280px) {
+    padding: 12px;
+  }
 `;
 
 export const SelectedWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 4px;
+
+  @media (min-width: 1280px) {
+    gap: 8px;
+  }
 `;
 
 export const SelectedText = styled.span`
@@ -42,6 +50,11 @@ export const DropdownListItem = styled.li`
 
   &:not(:last-child) {
     border-bottom: 1px solid #4e666e;
+  }
+
+  @media (min-width: 1280px) {
+    padding: 12px;
+    gap: 8px;
   }
 
   &:hover,
