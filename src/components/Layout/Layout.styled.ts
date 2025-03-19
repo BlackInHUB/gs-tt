@@ -1,7 +1,12 @@
 import styled from 'styled-components';
 
 export const LayoutContainer = styled.div`
-  color: ${({ theme }) => theme.colors.dark.fontLight};
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  font-family: ${({ theme }) => theme.fontFamily.main};
+  background-color: #01060f;
+  color: #ffffff;
   font-size: ${({ theme }) => theme.fontSizes.mobile.s};
 
   @media (min-width: 1280px) {
@@ -10,6 +15,9 @@ export const LayoutContainer = styled.div`
 `;
 
 export const OutletContainer = styled.main`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   margin: 0 auto;
   padding: 12px;

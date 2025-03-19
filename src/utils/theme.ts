@@ -2,18 +2,6 @@ const theme = {
   fontFamily: {
     main: 'Helvetica, sans-serif',
   },
-  colors: {
-    dark: {
-      background: '#000000',
-      containers: '#20242C',
-      elements: '#111419',
-      fontLight: '#FFFFFF',
-      fontDark: '#000000',
-    },
-
-    backdrop: 'rgba(0, 0, 0, 0.8)',
-    transparent: 'transparent',
-  },
   fontSizes: {
     mobile: {
       s: '12px',
@@ -41,6 +29,3 @@ const theme = {
 };
 
 export default theme;
-
-document.body.style.backgroundColor = theme.colors.dark.background;
-document.body.style.fontFamily = theme.fontFamily.main;

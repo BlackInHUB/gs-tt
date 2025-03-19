@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const DropdownContainer = styled.div`
   position: relative;
   padding: 8px;
-  background-color: ${({ theme }) => theme.colors.dark.elements};
+  background-color: #141820;
   border-radius: ${({ theme }) => theme.radii.l};
   cursor: pointer;
 
@@ -24,7 +24,7 @@ export const SelectedWrapper = styled.div`
 
 export const SelectedText = styled.span`
   text-transform: uppercase;
-  color: ${({ theme }) => theme.colors.dark.fontLight};
+  color: #ffffff;
 `;
 
 export const DropdownList = styled.ul<{ $isOpen: boolean }>`
@@ -33,7 +33,7 @@ export const DropdownList = styled.ul<{ $isOpen: boolean }>`
   left: 0;
   z-index: 10;
   max-height: ${props => (props.$isOpen ? '500px' : 0)};
-  background-color: #2d3b40;
+  background-color: #2c4450;
   border-radius: ${({ theme }) => theme.radii.xxs};
   overflow: hidden;
   transition: max-height 150ms ease-in-out;
@@ -49,7 +49,7 @@ export const DropdownListItem = styled.li`
   transition: hover 150ms linear;
 
   &:not(:last-child) {
-    border-bottom: 1px solid #4e666e;
+    border-bottom: 1px solid #4e626c;
   }
 
   @media (min-width: 1280px) {
@@ -59,6 +59,6 @@ export const DropdownListItem = styled.li`
 
   &:hover,
   :focus {
-    background-color: #4e666e;
+    background-color: #4e626c;
   }
 `;

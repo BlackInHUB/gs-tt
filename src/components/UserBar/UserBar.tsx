@@ -1,9 +1,10 @@
-import { BarContainer } from './UserBar.styled';
+import { BarContainer, RightWrapper } from './UserBar.styled';
 import { ReactComponent as EnIcon } from '../../assets/icons/en.svg';
 import { ReactComponent as UaIcon } from '../../assets/icons/ua.svg';
 import { ReactComponent as CurIcon } from '../../assets/icons/currency.svg';
 import Dropdown, { DropItemType } from '../UI/Dropdown/Dropdown';
 import { useState } from 'react';
+import Logo from '../Logo/Logo';
 
 const currencies: DropItemType[] = [
   { Icon: CurIcon, text: 'usd' },
@@ -28,22 +29,25 @@ const UserBar = () => {
 
   return (
     <BarContainer>
-      <Dropdown
-        onDropClick={() => toggleDropOpen('cur')}
-        onItemClick={(i: number) => setUserCur(currencies[i])}
-        items={currencies}
-        isOpen={curOpen}
-        selected={userCur}
-        onClose={() => setCurOpen(false)}
-      />
-      <Dropdown
-        onDropClick={() => toggleDropOpen()}
-        onItemClick={(i: number) => setUserLang(languages[i])}
-        items={languages}
-        isOpen={langOpen}
-        selected={userLang}
-        onClose={() => setLangOpen(false)}
-      />
+      <Logo />
+      <RightWrapper>
+        <Dropdown
+          onDropClick={() => toggleDropOpen('cur')}
+          onItemClick={(i: number) => setUserCur(currencies[i])}
+          items={currencies}
+          isOpen={curOpen}
+          selected={userCur}
+          onClose={() => setCurOpen(false)}
+        />
+        <Dropdown
+          onDropClick={() => toggleDropOpen()}
+          onItemClick={(i: number) => setUserLang(languages[i])}
+          items={languages}
+          isOpen={langOpen}
+          selected={userLang}
+          onClose={() => setLangOpen(false)}
+        />
+      </RightWrapper>
     </BarContainer>
   );
 };

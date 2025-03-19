@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import theme from '../../../utils/theme';
 
 type Props = {
   $width?: string;
@@ -10,7 +9,7 @@ type Props = {
 export const IconComponent = styled.svg<Props>`
   width: ${props => (props.$width ? props.$width : '20px')};
   height: ${props => (props.$height ? props.$height : '20px')};
-  fill: ${props => (props.$fill ? props.$fill : theme.colors.dark.fontLight)};
+  fill: ${props => (props.$fill ? props.$fill : '#FFFFFF')};
   stroke: ${props => (props.$fill ? props.$fill : 'inherit')};
   transition: all 150 linear;
 

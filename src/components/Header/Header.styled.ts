@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const HeaderContainer = styled.header`
-  background-color: ${({ theme }) => theme.colors.dark.containers};
+  background-color: #0a1017;
   padding: 8px 12px;
 
   @media (min-width: 1280px) {
