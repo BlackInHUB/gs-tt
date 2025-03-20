@@ -11,6 +11,7 @@ type ButtonProps = {
   mb?: string;
   children?: React.ReactNode;
   Icon?: React.ElementType;
+  handleClick?: () => void;
 };
 
 const Button = ({
@@ -23,6 +24,7 @@ const Button = ({
   mb = '0',
   Icon,
   fontWeight = 'regular',
+  handleClick,
 }: ButtonProps) => {
   return (
     <Btn
@@ -33,6 +35,7 @@ const Button = ({
       $color={color}
       $variant={variant}
       $radii={radii}
+      onClick={handleClick}
     >
       {Icon && <StyledIcon Icon={Icon} />}
       {children}

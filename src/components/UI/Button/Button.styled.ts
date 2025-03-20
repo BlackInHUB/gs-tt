@@ -10,13 +10,13 @@ type Props = {
 };
 
 export const Btn = styled.button<Props>`
-  width: 100%;
+  width: ${props => (props.$variant === 'icon' ? 'fit-content' : '100%')};
   display: flex;
   align-items: center;
   justify-content: center;
   padding: ${props => props.$padding};
   margin-bottom: ${props => props.$mb};
-  background-color: ${props => (props.$color === 'light' ? '#FFFFFF' : '000000')};
+  background-color: ${props => (props.$variant === 'icon' ? 'transparent' : '#FFFFFF')};
   border-radius: ${props => (props.$radii === 'm' ? props.theme.radii.m : props.theme.radii.s)};
   color: ${props => (props.$color === 'light' ? '#000000' : 'FFFFFF')};
   font-weight: ${props =>

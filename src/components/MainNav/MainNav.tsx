@@ -5,10 +5,10 @@ const MainNav = () => {
   return (
     <MainNavContainer>
       <AuthLinksWrapper>
-        <UserNavLink to="register">
+        <UserNavLink to="authentication/register">
           <Button padding="16px" children="Registration" />
         </UserNavLink>
-        <UserNavLink to="login">
+        <UserNavLink to="authentication/login">
           <Button padding="16px" children="Login" />
         </UserNavLink>
       </AuthLinksWrapper>
