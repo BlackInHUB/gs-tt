@@ -8,5 +8,6 @@ export const BarContainer = styled.div`
 
 export const RightWrapper = styled.div`
   display: flex;
+  align-items: center;
   gap: 4px;
 `;

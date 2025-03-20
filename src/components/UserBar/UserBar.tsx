@@ -5,6 +5,9 @@ import { ReactComponent as CurIcon } from '../../assets/icons/currency.svg';
 import Dropdown, { DropItemType } from '../UI/Dropdown/Dropdown';
 import { useState } from 'react';
 import Logo from '../Logo/Logo';
+import StyledIcon from '../UI/StyledIcon/StyledIcon';
+import { PiUserCircleCheckLight } from 'react-icons/pi';
+import { useMQ } from '../../hooks/useMQ';
 
 const currencies: DropItemType[] = [
   { Icon: CurIcon, text: 'usd' },
@@ -17,11 +20,16 @@ const languages: DropItemType[] = [
   { Icon: UaIcon, text: 'ua' },
 ];
 
-const UserBar = () => {
+type Props = {
+  isLoggedIn: boolean;
+};
+
+const UserBar = ({ isLoggedIn }: Props) => {
   const [userCur, setUserCur] = useState<DropItemType>(currencies[0]);
   const [curOpen, setCurOpen] = useState(false);
   const [userLang, setUserLang] = useState<DropItemType>(languages[0]);
   const [langOpen, setLangOpen] = useState(false);
+  const { isMobile } = useMQ();
 
   const toggleDropOpen = (name?: string) => {
     return name === 'cur' ? setCurOpen(prev => !prev) : setLangOpen(prev => !prev);
@@ -47,6 +55,14 @@ const UserBar = () => {
           selected={userLang}
           onClose={() => setLangOpen(false)}
         />
+        {isLoggedIn && (
+          <StyledIcon
+            Icon={PiUserCircleCheckLight}
+            width={isMobile ? '25px' : '30px'}
+            height={isMobile ? '25px' : '30px'}
+            fill="#FFFFFF"
+          />
+        )}
       </RightWrapper>
     </BarContainer>
   );

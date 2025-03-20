@@ -1,10 +1,14 @@
 import UserBar from '../UserBar/UserBar';
 import { HeaderContainer } from './Header.styled';
 
-const Header = () => {
+type Props = {
+  isLoggedIn: boolean;
+};
+
+const Header = ({ isLoggedIn }: Props) => {
   return (
     <HeaderContainer>
-      <UserBar />
+      <UserBar isLoggedIn={isLoggedIn} />
     </HeaderContainer>
   );
 };

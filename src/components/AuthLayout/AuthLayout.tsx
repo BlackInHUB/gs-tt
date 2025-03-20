@@ -1,7 +1,8 @@
 import { Suspense } from 'react';
 import { AuthOutletContainer, LayoutContainer } from './AuthLayout.styled';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useOutletContext } from 'react-router-dom';
 import AuthNavBar from '../AuthNavBar/AuthNavBar';
+import { MainContextType } from '../Layout/Layout';
 
 export type UserAuthStateType = {
   email: string;
@@ -10,12 +11,14 @@ export type UserAuthStateType = {
 };
 
 const AuthLayout = () => {
+  const { handleAuthSubmit } = useOutletContext<MainContextType>();
+
   return (
     <LayoutContainer>
       <AuthOutletContainer>
         <AuthNavBar />
         <Suspense fallback={null}>
-          <Outlet />
+          <Outlet context={{ handleAuthSubmit }} />
         </Suspense>
       </AuthOutletContainer>
     </LayoutContainer>
