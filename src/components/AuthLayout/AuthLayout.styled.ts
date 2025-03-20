@@ -16,7 +16,8 @@ export const LayoutContainer = styled.div`
 
 export const AuthOutletContainer = styled.div`
   width: calc(100% - 24px);
+  max-width: 500px;
   padding: 16px;
   border-radius: ${({ theme }) => theme.radii.m};
-  background-color: #363940;
+  background-color: #20242c;
 `;

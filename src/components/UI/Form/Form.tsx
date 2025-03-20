@@ -1,27 +1,42 @@
-import { ChangeEvent, FormEvent } from 'react';
 import { FormContainer } from './Form.styled';
 import Input, { InputType } from './Input';
 import Button from '../Button/Button';
+import useForm from '../../../hooks/useForm';
+import Checkbox from '../Checkbox/Checkbox';
 
-type FormProps = {
+type FormProps<T> = {
+  formType: 'login' | 'register';
   inputs: InputType[];
-  handleInputChange: (e: ChangeEvent<HTMLInputElement>) => void;
-  handleFormSubmit: () => void;
+  initialState: T;
+  onSubmit: (state: T) => void;
   buttonText: string;
 };
 
-const Form = ({ inputs, handleInputChange, handleFormSubmit, buttonText }: FormProps) => {
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    handleFormSubmit();
-  };
+const Form = <T extends { [k: string]: string }>({
+  formType,
+  inputs,
+  initialState,
+  onSubmit,
+  buttonText,
+}: FormProps<T>) => {
+  const { handleInputChange, handleSubmit, state } = useForm<T>(initialState, onSubmit);
 
-  <FormContainer onSubmit={handleSubmit}>
-    {inputs.map((input, i) => (
-      <Input key={i} input={input} handleChange={handleInputChange} />
-    ))}
-    <Button type="submit" radii="s" children={buttonText} />
-  </FormContainer>;
+  return (
+    <FormContainer onSubmit={handleSubmit}>
+      {inputs.map(({ name, type, placeholder }, i) => (
+        <Input
+          key={i}
+          name={name}
+          type={type}
+          value={state[name] as string | number}
+          placeholder={placeholder}
+          handleChange={handleInputChange}
+        />
+      ))}
+      {formType === 'register' && <Checkbox />}
+      <Button padding="16px" type="submit" radii="s" children={buttonText} />
+    </FormContainer>
+  );
 };
 
 export default Form;

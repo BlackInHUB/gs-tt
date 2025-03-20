@@ -3,6 +3,12 @@ import { AuthOutletContainer, LayoutContainer } from './AuthLayout.styled';
 import { Outlet } from 'react-router-dom';
 import AuthNavBar from '../AuthNavBar/AuthNavBar';
 
+export type UserAuthStateType = {
+  email: string;
+  password: string;
+  confirm: string;
+};
+
 const AuthLayout = () => {
   return (
     <LayoutContainer>

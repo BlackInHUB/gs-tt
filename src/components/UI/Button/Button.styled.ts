@@ -21,4 +21,5 @@ export const Btn = styled.button<Props>`
   color: ${props => (props.$color === 'light' ? '#000000' : 'FFFFFF')};
   font-weight: ${props =>
     props.$fontWeight === 'bold' ? props.theme.fontWeights.bold : props.theme.fontWeights.regular};
+  cursor: pointer;
 `;

@@ -6,28 +6,28 @@ import SocialNetworks from '../components/SocialNetworks/SocialNetworks';
 const loginInputs: InputType[] = [
   { name: 'email', type: 'email', value: '', placeholder: 'Email' },
   { name: 'password', type: 'password', value: '', placeholder: 'Password' },
+  { name: 'confirm', type: 'password', value: '', placeholder: 'Confirm password' },
 ];
 
-type LoginStateType = Omit<UserAuthStateType, 'confirm'>;
-const initialState: LoginStateType = { email: '', password: '' };
+const initialState: UserAuthStateType = { email: '', password: '', confirm: '' };
 
-const LoginPage = () => {
-  const handleSubmit = (state: LoginStateType) => {
+const RegisterPage = () => {
+  const handleSubmit = (state: UserAuthStateType) => {
     console.log(state);
   };
 
   return (
     <>
-      <Form<LoginStateType>
-        formType="login"
+      <Form<UserAuthStateType>
+        formType="register"
         initialState={initialState}
         inputs={loginInputs}
         onSubmit={handleSubmit}
-        buttonText="Login"
+        buttonText="Registration"
       />
       <SocialNetworks />
     </>
   );
 };
 
-export default LoginPage;
+export default RegisterPage;

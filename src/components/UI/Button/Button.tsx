@@ -2,6 +2,7 @@ import StyledIcon from '../StyledIcon/StyledIcon';
 import { Btn } from './Button.styled';
 
 type ButtonProps = {
+  name?: string;
   color?: 'dark' | 'light';
   variant?: 'text' | 'icon';
   radii?: 's' | 'm';
@@ -15,6 +16,7 @@ type ButtonProps = {
 };
 
 const Button = ({
+  name,
   color = 'light',
   variant = 'text',
   radii = 'm',
@@ -28,6 +30,7 @@ const Button = ({
 }: ButtonProps) => {
   return (
     <Btn
+      name={name}
       $padding={padding}
       $mb={mb}
       $fontWeight={fontWeight}

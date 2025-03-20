@@ -11,7 +11,7 @@ export const NavBarLinksWrapper = styled.div`
   width: 100%;
   padding: 4px;
   display: flex;
-  background-color: #51555b;
+  background-color: #3b3f46;
   border-radius: ${({ theme }) => theme.radii.m};
 `;
 

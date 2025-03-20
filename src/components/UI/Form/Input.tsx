@@ -9,13 +9,14 @@ export type InputType = {
 };
 
 type InputProps = {
-  input: InputType;
+  name: string;
+  type: string;
+  value: string | number;
+  placeholder: string;
   handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
-const Input = ({ input, handleChange }: InputProps) => {
-  const { name, type, value, placeholder } = input;
-
+const Input = ({ name, type, value, placeholder, handleChange }: InputProps) => {
   return (
     <FormInput
       name={name}
